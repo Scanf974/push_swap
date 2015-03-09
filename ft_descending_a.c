@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prelim.h                                           :+:      :+:    :+:   */
+/*   ft_descending_a.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsautron <bsautron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/27 10:37:24 by bsautron          #+#    #+#             */
-/*   Updated: 2015/03/08 08:23:57 by bsautron         ###   ########.fr       */
+/*   Created: 2015/03/08 19:43:17 by bsautron          #+#    #+#             */
+/*   Updated: 2015/03/08 19:43:36 by bsautron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRELIM_H
-# define PRELIM_H
+#include "push_swap.h"
 
-# include "libldc.h"
+int	ft_descending_a(t_lstrepere *s[2])
+{
+	int		flag;
+	size_t	i;
 
-int	ft_pswap_one(t_lstrepere **stack);
-int	ft_pswap_two(t_lstrepere **stack);
-int	ft_prot_one(t_lstrepere **stack);
-int	ft_prot_two(t_lstrepere **stack);
-int	ft_protr_one(t_lstrepere **stack);
-int	ft_protr_two(t_lstrepere **stack);
-int	ft_ppusha(t_lstrepere **stack);
-int	ft_ppushb(t_lstrepere **stack);
-
-#endif
+	i = 0;
+	flag = 1;
+	while (i < s[0]->len - 1)
+	{
+		if (s[0]->first->data < s[0]->first->next->data)
+			flag = 0;
+		s[0]->first = s[0]->first->next;
+		i++;
+	}
+	s[0]->first = s[0]->first->next;
+	return (flag);
+}

@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prelim.h                                           :+:      :+:    :+:   */
+/*   ft_pos_min.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsautron <bsautron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/27 10:37:24 by bsautron          #+#    #+#             */
-/*   Updated: 2015/03/08 08:23:57 by bsautron         ###   ########.fr       */
+/*   Created: 2015/03/08 19:42:32 by bsautron          #+#    #+#             */
+/*   Updated: 2015/03/08 19:42:58 by bsautron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRELIM_H
-# define PRELIM_H
+#include "push_swap.h"
 
-# include "libldc.h"
+size_t	ft_pos_min(t_lstrepere *s[2])
+{
+	int		save;
+	size_t	index;
+	size_t	i;
 
-int	ft_pswap_one(t_lstrepere **stack);
-int	ft_pswap_two(t_lstrepere **stack);
-int	ft_prot_one(t_lstrepere **stack);
-int	ft_prot_two(t_lstrepere **stack);
-int	ft_protr_one(t_lstrepere **stack);
-int	ft_protr_two(t_lstrepere **stack);
-int	ft_ppusha(t_lstrepere **stack);
-int	ft_ppushb(t_lstrepere **stack);
-
-#endif
+	save = s[0]->first->data;
+	index = 0;
+	i = 0;
+	while (i < s[0]->len)
+	{
+		if (save > s[0]->first->data)
+		{
+			save = s[0]->first->data;
+			index = i;
+		}
+		s[0]->first = s[0]->first->next;
+		i++;
+	}
+	return (index);
+}

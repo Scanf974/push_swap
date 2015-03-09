@@ -6,7 +6,7 @@
 /*   By: bsautron <bsautron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/28 18:12:42 by bsautron          #+#    #+#             */
-/*   Updated: 2015/01/28 18:31:11 by bsautron         ###   ########.fr       */
+/*   Updated: 2015/03/08 15:24:13 by bsautron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void ft_dev(t_lstrepere *stack[2], int opp, int st, t_op op)
 	if (opp == 2 || opp == 3)
 		ft_pputstr("Rotation ");
 	if (opp == 4 || opp == 5)
-		ft_pputstr("Rotation reverse");
+		ft_pputstr("Rotation reverse ");
 	if (opp >= 6)
 		ft_pputstr("Push ");
 	if (st == 0)

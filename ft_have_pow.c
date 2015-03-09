@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prelim.h                                           :+:      :+:    :+:   */
+/*   ft_have_pow.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsautron <bsautron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/27 10:37:24 by bsautron          #+#    #+#             */
-/*   Updated: 2015/03/08 08:23:57 by bsautron         ###   ########.fr       */
+/*   Created: 2015/03/08 19:51:19 by bsautron          #+#    #+#             */
+/*   Updated: 2015/03/08 19:51:24 by bsautron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRELIM_H
-# define PRELIM_H
+int	ft_have_pow(char *str)
+{
+	int		i;
 
-# include "libldc.h"
-
-int	ft_pswap_one(t_lstrepere **stack);
-int	ft_pswap_two(t_lstrepere **stack);
-int	ft_prot_one(t_lstrepere **stack);
-int	ft_prot_two(t_lstrepere **stack);
-int	ft_protr_one(t_lstrepere **stack);
-int	ft_protr_two(t_lstrepere **stack);
-int	ft_ppusha(t_lstrepere **stack);
-int	ft_ppushb(t_lstrepere **stack);
-
-#endif
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == '^')
+			return (i + 1);
+		i++;
+	}
+	return (0);
+}

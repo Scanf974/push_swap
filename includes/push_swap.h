@@ -6,7 +6,7 @@
 /*   By: bsautron <bsautron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 12:51:26 by bsautron          #+#    #+#             */
-/*   Updated: 2015/01/28 18:27:54 by bsautron         ###   ########.fr       */
+/*   Updated: 2015/03/08 20:00:09 by 9087             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,11 @@ void					init_all(t_op *op, int (**func)(t_lstrepere **));
 void					ft_each(int flag, t_op op);
 void					ft_pputchar(char c);
 void					ft_pputstr(char const *str);
+int						ft_pstrcmp(const char *s1, const char *s2);
 void					ft_pputnbr(int nb);
 char					*ft_pstrdup(const char *s1);
-long long int			ft_patoi(const char *str);
+int						ft_patoi(const char *str);
+char					*ft_pitoa(int n);
 int						ft_pisdigit(char c);
 int						ft_onlydigit(char *str);
 int						ft_pcharcheck_in_str(char c, char *str);
@@ -71,5 +73,12 @@ int						push_swap(t_lstrepere *stack[2], int op, int wst,
 int						ft_sort_this(t_lstrepere *stack[2],
 						int (**f)(t_lstrepere **), t_op *op);
 int						ft_check_op(char **argv, t_op *op);
+size_t					ft_pos_min(t_lstrepere *s[2]);
+int						ft_descending_a(t_lstrepere *s[2]);
+int						ft_sorted_a(t_lstrepere *s[2], int first);
+void					ft_print_first_stack(t_lstrepere **s, t_op op);
+int						ft_have_pow(char *str);
+int						ft_pow(int base, int pow);
+void					ft_check_doublon(t_lstrepere *s[2]);
 
 #endif

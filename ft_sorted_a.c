@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_patoi.c                                         :+:      :+:    :+:   */
+/*   ft_sorted_a.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsautron <bsautron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/24 23:04:49 by bsautron          #+#    #+#             */
-/*   Updated: 2015/03/08 08:51:04 by bsautron         ###   ########.fr       */
+/*   Created: 2015/03/08 19:44:00 by bsautron          #+#    #+#             */
+/*   Updated: 2015/03/08 19:44:22 by bsautron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	rec_atoi(const char *str, int rez)
+int	ft_sorted_a(t_lstrepere *s[2], int first)
 {
-	if (ft_pisdigit(*str))
-		return (rec_atoi(str + 1, 10 * rez + (*str - '0')));
-	return (rez);
-}
+	int		flag;
+	size_t	i;
 
-int			ft_patoi(const char *str)
-{
-	char	signe;
-
-	signe = 1;
-	while (*str <= ' ' && *str > '\0')
-		str++;
-	if (*str == '-')
-		signe = -1;
-	if (*str == '+' || signe == -1)
-		str++;
-	if (ft_pisdigit(*str))
-		return (signe * rec_atoi(str, 0));
-	return (0);
+	i = 0;
+	flag = 1;
+	while (i < s[0]->len - 1)
+	{
+		if (first && i == s[0]->len - 2 && flag
+				&& s[0]->first->data > s[0]->first->next->data)
+			flag = -1;
+		else if (s[0]->first->data > s[0]->first->next->data)
+			flag = 0;
+		s[0]->first = s[0]->first->next;
+		i++;
+	}
+	s[0]->first = s[0]->first->next;
+	return (flag);
 }

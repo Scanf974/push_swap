@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prelim.h                                           :+:      :+:    :+:   */
+/*   ft_pow.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsautron <bsautron@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/27 10:37:24 by bsautron          #+#    #+#             */
-/*   Updated: 2015/03/08 08:23:57 by bsautron         ###   ########.fr       */
+/*   Created: 2015/03/08 19:50:41 by bsautron          #+#    #+#             */
+/*   Updated: 2015/03/08 19:51:06 by bsautron         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRELIM_H
-# define PRELIM_H
+int		ft_pow(int base, int pow)
+{
+	int		resultat;
 
-# include "libldc.h"
-
-int	ft_pswap_one(t_lstrepere **stack);
-int	ft_pswap_two(t_lstrepere **stack);
-int	ft_prot_one(t_lstrepere **stack);
-int	ft_prot_two(t_lstrepere **stack);
-int	ft_protr_one(t_lstrepere **stack);
-int	ft_protr_two(t_lstrepere **stack);
-int	ft_ppusha(t_lstrepere **stack);
-int	ft_ppushb(t_lstrepere **stack);
-
-#endif
+	resultat = 1;
+	if (pow == 0)
+		return (1);
+	else if (pow < 0)
+		return (0);
+	while (pow > 0)
+	{
+		resultat *= base;
+		pow--;
+	}
+	return (resultat);
+}
