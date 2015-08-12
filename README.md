@@ -1,6 +1,6 @@
 # Push_swap
 
-Le jeu est constitué de 2 piles nommées a et b (si vous savez pas ce qu’est une pile, Google est votre ami).
+Le jeu est constitué de 2 piles nommées a et b.
 * Au départ b est vide et a contient un certain nombre de nombres positifs ou négatifs
 (sans doublons).
 * Le but du jeu est de faire en sorte que a contienne les mêmes nombres mais dans
